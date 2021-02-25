@@ -1,0 +1,84 @@
+html, body{
+    box-sizing: border-box;
+}
+/* prevent mustache symbol from showing up */
+[v-cloak] {
+    display: none;
+}
+
+#app{
+    display: grid;
+    margin: 0 auto;
+    width: 350px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1.75fr 1fr;
+}
+
+h1,h2,h5, form.interaction_area{
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+h1,h2,h4,h5, form.interaction_area{
+    margin: 0;
+    border-radius: 1rem;
+}
+
+h1{
+    padding: 1rem;
+    color: white;
+    background-color:  rgb(241, 192, 119);
+}
+
+h2{
+    padding: 1.5rem;
+    color: white;
+    background-color:  rgb(146, 114, 67);
+}
+
+h4{
+    padding: 1rem;
+    color: white;
+    background-color:  rgb(190, 172, 145);
+    text-align: center;
+}
+
+h5{
+    align-items: center;
+}
+
+form.interaction_area{
+    padding-top:2rem;
+    background-color: blanchedalmond;
+}
+
+
+.stl1,.stl2,.stl3,.stl4,.stl5,.stl6,.stl7,.stl8{
+    padding: 2rem;
+    color: white;
+}
+
+.stl1{
+    background-color: rgb(26, 157, 116);
+}
+.stl2{
+    background-color: rgb(156, 46, 12);
+}
+.stl3{
+    background-color: rgb(233, 130, 19);
+}
+.stl4{
+    background-color: rgb(105, 14, 109);
+}
+.stl5{
+    background-color: rgb(12, 156, 53);
+}
+.stl6{
+    background-color: rgb(206, 206, 19);
+}
+.stl7{
+    background-color: rgb(111, 162, 128);
+}
+.stl8{
+    background-color: rgb(199, 151, 113);
+}

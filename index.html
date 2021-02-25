@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome to Scramble.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- game infomation -->
+    <h1>Welcome to Scramble.</h1>
+    <h4 v-cloak>{{game.points}}<br>POINTS</h4>
+    <h4 v-cloak>{{game.strikes}}<br>STRIKES</h4>
+    <h2 v-cloak>{{scrambledWord}}</h2>
+    <!-- form -->
+    <form action="" class="interaction_area" @submit.prevent="check">
+      <input type="text" v-model="game.guess" v-if="game.gameOver === false"><br><br>
+      <button type="button" @click="playAgain" v-if="game.gameOver === true">Play Again</button>
+      <button type="submit" v-if="game.gameOver === false">Take a Guess</button> 
+      <button v-cloak type="button" @click="pass" v-if="game.gameOver === false">{{game.passes}} Passes Remaining</button>    
+    </form>
+    <!-- messages -->
+    <h5 v-cloak class="stl1" v-if="game.hideMessage1 === false">Right answer, 1 point</h5>
+    <h5 v-cloak class="stl2" v-else-if="game.hideMessage2 === false">Wrong answer, 1 strike, guess again</h5>
+    <h5 v-cloak class="stl3" v-else-if="game.hideMessage3 === false">Max strike reached, gome over</h5>
+    <h5 v-cloak class="stl4" v-else-if="game.hideMessage4 === false">This is a new game</h5>
+    <h5 v-cloak class="stl5" v-else-if="game.hideMessage5 === false">Congratulations, you reached max points</h5>
+    <h5 v-cloak class="stl6" v-else-if="game.hideMessage6 === false">No more words left, game over</h5>
+    <h5 v-cloak class="stl7" v-else-if="game.hideMessage7 === false">You used 1 pass</h5>
+    <h5 v-cloak class="stl8" v-else-if="game.hideMessage8 === false">You used the last pass</h5>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="scramble.js"></script>
+</body>
+
+</html>
